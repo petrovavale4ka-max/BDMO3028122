@@ -1,0 +1,67 @@
+PyDev console: starting.
+Python 3.12.4 (tags/v3.12.4:8e8a4ba, Jun  6 2024, 19:30:16) [MSC v.1940 64 bit (AMD64)] on win32
+import numpy
+import numpy as np
+np.array([0,2,4,6,8,10])
+array([ 0,  2,  4,  6,  8, 10])
+c = np.array([0,2,4,6,8,10])
+cope_c = c.copy()
+c
+array([ 0,  2,  4,  6,  8, 10])
+copy_c
+Traceback (most recent call last):
+  File "C:\Program Files\JetBrains\PyCharm 2026.2.3\plugins\python-ce\helpers\pydev\pydevconsole.py", line 374, in runcode
+    coro = func()
+           ^^^^^^
+  File "<input>", line 1, in <module>
+NameError: name 'copy_c' is not defined. Did you mean: 'cope_c'?
+copy_c
+Traceback (most recent call last):
+  File "C:\Program Files\JetBrains\PyCharm 2026.2.3\plugins\python-ce\helpers\pydev\pydevconsole.py", line 374, in runcode
+    coro = func()
+           ^^^^^^
+  File "<input>", line 1, in <module>
+NameError: name 'copy_c' is not defined. Did you mean: 'cope_c'?
+copy_c
+Traceback (most recent call last):
+  File "C:\Program Files\JetBrains\PyCharm 2026.2.3\plugins\python-ce\helpers\pydev\pydevconsole.py", line 374, in runcode
+    coro = func()
+           ^^^^^^
+  File "<input>", line 1, in <module>
+NameError: name 'copy_c' is not defined. Did you mean: 'cope_c'?
+cope_c = c.copy()
+cope_c
+array([ 0,  2,  4,  6,  8, 10])
+c*=2
+c=c**2
+cope_c
+array([ 0,  2,  4,  6,  8, 10])
+view = copy_c[np.array([2,3,4])]
+Traceback (most recent call last):
+  File "C:\Program Files\JetBrains\PyCharm 2026.2.3\plugins\python-ce\helpers\pydev\pydevconsole.py", line 374, in runcode
+    coro = func()
+           ^^^^^^
+  File "<input>", line 1, in <module>
+NameError: name 'copy_c' is not defined. Did you mean: 'cope_c'?
+view = cope_c[np.array([2,3,4])]
+view1 = cope_c[np.array([2,3,4])]
+view2 = c>100
+view3 = c[c>100]=95
+c.clip(2,94)
+array([ 2, 16, 64, 94, 94, 94])
+data = np.genfromtxt("data/web_traffic.tsv", delimiter="\t")
+np.isnan(data)
+array([[False, False],
+       [False,  True],
+       [False, False],
+       ...,
+       [False, False],
+       [False, False],
+       [False, False]], shape=(743, 2))
+data[~np.isnan(data)]
+array([1.000e+00, 2.272e+03, 2.000e+00, ..., 5.906e+03, 7.430e+02,
+       4.881e+03], shape=(1478,))
+np.mean(data[~np.isnan(data)])
+np.float64(1162.7794316644113)
+np.std(data[~np.isnan(data)])
+np.float64(1011.5231284089888)
